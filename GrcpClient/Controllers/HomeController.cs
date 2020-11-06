@@ -44,6 +44,8 @@ namespace GrcpClient.Controllers
             return View(reply);
         }
 
+        //test
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
