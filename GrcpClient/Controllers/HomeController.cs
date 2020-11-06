@@ -31,10 +31,7 @@ namespace GrcpClient.Controllers
 
         public IActionResult grpc()
         {
-            AppContext.SetSwitch(
-    "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
-
-
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
             // The port number(5001) must match the port of the gRPC server.
             using var channel = GrpcChannel.ForAddress("http://localhost:5001");
@@ -43,8 +40,6 @@ namespace GrcpClient.Controllers
                               new HelloRequest { Name = "client hello" });
             return View(reply);
         }
-
-        //test
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
