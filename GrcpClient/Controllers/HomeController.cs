@@ -34,6 +34,8 @@ namespace GrcpClient.Controllers
             AppContext.SetSwitch(
     "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
+
+
             // The port number(5001) must match the port of the gRPC server.
             using var channel = GrpcChannel.ForAddress("http://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
